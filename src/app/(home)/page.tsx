@@ -18,27 +18,29 @@ export default async function Home() {
     <section className={styles.main}>
       <h1 className={styles.title}>Billionaires</h1>
       <ul className={styles.billionaires}>
-        {billionaires.map((b: Billionaires) => (
-          <Link href={`/person/${b.id}`} key={b.id}>
-            <li className={styles.billionaire}>
-              <img
-                className={styles.thumbnail}
-                src={
-                  b.squareImage.includes("undefined")
-                    ? "./no-image.png"
-                    : b.squareImage
-                }
-                alt={b.id}
-              />
-              <div className={styles.metadata}>
-                <p className={styles.name}>{b.name}</p>
-                <p className={styles.info}>
-                  {formatter(b.netWorth)} Billion / {b.industries}
-                </p>
-              </div>
-            </li>
-          </Link>
-        ))}
+        {billionaires.map(
+          ({ id, name, squareImage, netWorth, industries }: Billionaires) => (
+            <Link href={`/person/${id}`} key={id}>
+              <li className={styles.billionaire}>
+                <img
+                  className={styles.thumbnail}
+                  src={
+                    squareImage.includes("undefined")
+                      ? "./no-image.png"
+                      : squareImage
+                  }
+                  alt={id}
+                />
+                <div className={styles.metadata}>
+                  <p className={styles.name}>{name}</p>
+                  <p className={styles.info}>
+                    {formatter(netWorth)} Billion / {industries}
+                  </p>
+                </div>
+              </li>
+            </Link>
+          )
+        )}
       </ul>
     </section>
   );

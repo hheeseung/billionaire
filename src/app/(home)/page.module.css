@@ -30,6 +30,16 @@
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
+.warning {
+  width: 416px;
+  height: 416px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a;
+  color: #cbd5e1;
+}
+
 .metadata {
   padding: 15px 10px;
   line-height: 1.2;

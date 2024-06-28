@@ -28,7 +28,7 @@ interface Billionaire {
   thumbnail: string;
   squareImage: string;
   bio: string[];
-  about: string[];
+  about?: string[];
   netWorth: number;
 }
 
@@ -38,7 +38,7 @@ export async function generateMetadata({
   const { name, about }: Billionaire = await getBillionaire(id);
   return {
     title: name,
-    description: about[0],
+    description: about ? about[0] : "",
   };
 }
 
@@ -56,7 +56,13 @@ export default async function Billionaire({ params: { id } }: Params) {
   return (
     <section className={styles.container}>
       <article className={styles.person}>
-        <img src={squareImage} alt={name} className={styles.thumbnail} />
+        <img
+          className={styles.thumbnail}
+          src={
+            squareImage.includes("undefined") ? "../no-image.png" : squareImage
+          }
+          alt={id}
+        />
         <div className={styles.info}>
           <h2 className={styles.name}>{name}</h2>
           <p className={styles.networth}>
