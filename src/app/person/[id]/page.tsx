@@ -1,6 +1,7 @@
 import { getBillionaire } from "@/services/billionaires";
 import styles from "./page.module.css";
 import { formatter } from "@/utils/formatter";
+import { Metadata } from "next";
 
 interface Params {
   params: {
@@ -29,6 +30,16 @@ interface Billionaire {
   bio: string[];
   about: string[];
   netWorth: number;
+}
+
+export async function generateMetadata({
+  params: { id },
+}: Params): Promise<Metadata> {
+  const { name, about }: Billionaire = await getBillionaire(id);
+  return {
+    title: name,
+    description: about[0],
+  };
 }
 
 export default async function Billionaire({ params: { id } }: Params) {

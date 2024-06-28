@@ -8,7 +8,10 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Billionaires",
+  title: {
+    default: "Billionaires",
+    template: "Billionaires | %s",
+  },
   description: "Get information on all billionaires.",
 };
 
