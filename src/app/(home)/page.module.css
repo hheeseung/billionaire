@@ -1,0 +1,39 @@
+.title {
+  font-size: xx-large;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.billionaires {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.billionaire {
+  margin-bottom: 10px;
+}
+
+.billionaire:hover {
+  scale: 1.05;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.metadata {
+  padding: 10px 5px;
+  line-height: 1.2;
+}
+
+.name {
+  font-weight: 600;
+  font-size: x-large;
+  margin-bottom: 5px;
+}
