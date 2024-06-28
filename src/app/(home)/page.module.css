@@ -12,6 +12,8 @@
 
 .billionaire {
   margin-bottom: 10px;
+  background-color: #0f172a;
+  border-radius: 0.5rem;
 }
 
 .billionaire:hover {
@@ -23,12 +25,13 @@
 
 .thumbnail {
   width: 100%;
-  border-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .metadata {
-  padding: 10px 5px;
+  padding: 15px 10px;
   line-height: 1.2;
 }
 
